@@ -1,0 +1,298 @@
+{
+    "songs":[
+        {
+            "name":"Shape of you",
+            "lyrics":[
+                    {
+                        "timestart": "00:00:10",
+                        "text": "The club isn't the best place to find a lover"
+                    },
+                    {
+                        "timestart": "00:00:14",
+                        "text": "So the bar is where I go"
+                        },
+                    {
+                        "timestart": "00:00:17",
+                        "text": "Me and my friends at the table doing shots"
+                    },
+                    {
+                        "timestart": "00:00:21",
+                        "text": "Drinking fast and then we talk slow"
+                    },
+                    {
+                        "timestart": "00:00:24",
+                        "text": "Come over and start up a conversation with just me"
+                    },
+                    {
+                        "timestart": "00:00:28",
+                        "text": "And trust me, I'll give it a chance now"
+                    },
+                    {
+                        "timestart": "00:00:24",
+                        "text": "Come over and start up a conversation with just me"
+                    },
+                    {
+                        "timestart": "00:00:24",
+                        "text": "Come over and start up a conversation with just me"
+                    },
+                    {
+                        "timestart": "00:00:24",
+                        "text": "Come over and start up a conversation with just me"
+                    },
+                    {
+                        "timestart": "00:00:24",
+                        "text": "Come over and start up a conversation with just me"
+                    },
+                    {
+                        "timestart": "00:00:24",
+                        "text": "Come over and start up a conversation with just me"
+                    },
+                    {
+                        "timestart": "00:00:24",
+                        "text": "Come over and start up a conversation with just me"
+                    },
+                    {
+                        "timestart": "00:00:24",
+                        "text": "Come over and start up a conversation with just me"
+                    }
+                    
+            ]
+        },
+        {
+            "name":"Nebun de alb",
+            "lyrics":[
+            {
+                "timeline": "00:00:22",
+                "text": "Acum sunt mai pustiu ca totdeauna"
+            },
+            {
+                "timeline": "00:00:26",
+
+                "text":"De când mă simt tot mai bogat de tine"
+
+            },
+            {
+                "timeline": "00:00:30",
+
+                "text":"Și-mi stau pe tâmple soarele și luna"
+            },
+            {
+                "timeline": "00:00:34",
+
+                "text":"Acum mi-e cel mai rău și cel mai bine."
+            },
+            {
+                "timeline": "00:00:38",
+
+                "text":"Și uite, n-are cine s ne-ajute"
+            },
+            {
+                "timeline": "00:00:42",
+
+                "text":"Abia-și mai ţine lumea ale sale"
+            },
+            {
+                "timeline": "00:00:46",
+
+                "text":"Și-ntr-un perete alb de muze mute"
+            },
+            {
+                "timeline": "00:00:50",
+
+                "text":"Mă uit la tine, ca la o minune."
+            },
+            {
+                "timeline": "00:00:54",
+
+                "text":"Și-mi vine să te iau cu mine-n lume"
+            },
+            {
+                "timeline": "00:00:58",
+
+                "text":"Să te rătăcesc prin țări și sate"
+            }
+           
+            ]
+        },
+        {
+            "name":"Master of Puppets",
+            "lyrics":[
+                {
+                    "timeline": "00:00:10",
+                    "text": "End of passion play, crumbling away"
+                },
+                {
+                    "timeline": "00:00:14",
+                    "text": "I'm your source of self-destruction"
+                },
+                {
+                    "timeline": "00:00:18",
+                    "text": "Veins that pump with fear, sucking darkest clear"
+                },
+                {
+                    "timeline": "00:00:22",
+                    "text": "Leading on your deaths' construction"
+                },
+                {
+                    "timeline": "00:00:26",
+                    "text": "Taste me you will see"
+                },
+                {
+                    "timeline": "00:00:30",
+                    "text": "More is all you need"
+                },
+                {
+                    "timeline": "00:00:34",
+                    "text": "Dedicated to"
+                },
+                {
+                    "timeline": "00:00:38",
+                    "text": "How I'm killing you"
+                },
+                {
+                    "timeline": "00:00:42",
+                    "text": "Come crawling faster"
+                },
+                {
+                    "timeline": "00:00:46",
+                    "text": "Obey your master"
+                },
+                {
+                    "timeline": "00:00:50",
+                    "text": "Your life burns faster"
+                },
+                {
+                    "timeline": "00:00:54",
+                    "text": "Obey your master"
+                },
+                {
+                    "timeline": "00:00:58",
+                    "text": "Master"
+                },
+                {
+                    "timeline": "00:01:02",
+                    "text": "Master of puppets I'm pulling your strings"
+                },
+                {
+                    "timeline": "00:01:06",
+                    "text": "Twisting your mind and smashing your dreams"
+                },
+                {
+                    "timeline": "00:01:10",
+                    "text": "Blinded by me, you can't see a thing"
+                },
+                {
+                    "timeline": "00:01:14",
+                    "text": "Just call my name, 'cause I'll hear you scream"
+                },
+                {
+                    "timeline": "00:01:18",
+                    "text": "Master"
+                },
+                {
+                    "timeline": "00:01:22",
+                    "text": "Master"
+                }
+            ]
+        },
+        {
+            "name":"As it was",
+            "lyrics":[
+                {
+                    "timeline": "00:00:10",
+                    "text": "Holdin' me back"
+                },
+                {
+                    "timeline":"00:00:14",
+                    "text":"Gravity's holdin' me back"
+                },
+                {
+                    "timeline":"00:00:18",
+                    "text":"I want you to hold out the palm of your hand"
+                },
+                {
+                    "timeline":"00:00:22",
+                    "text":"Why don't we leave it at that?"
+                },
+                {
+                    "timeline":"00:00:26",
+                    "text":"Nothin' to say"
+                },
+                {
+                    "timeline":"00:00:30",
+                    "text":"When everything gets in the way"
+                }
+            ]
+        },
+        {
+            "name":"Come as you are",
+            "lyrics":[
+                {
+                    "timeline": "00:00:10",
+                    "text": "Come as you are, as you were"
+                },
+                {
+                    "timeline": "00:00:14",
+                    "text": "As I want you to be"
+                },
+                {
+                    "timeline": "00:00:18",
+                    "text": "As a friend, as a friend"
+                },
+                {
+                    "timeline": "00:00:22",
+                    "text": "As an old enemy"
+                },
+                {
+                    "timeline": "00:00:26",
+                    "text": "Take your time, hurry up"
+                },
+                {
+                    "timeline": "00:00:30",
+                    "text": "The choice is yours, don't be late"
+                },
+                {
+                    "timeline": "00:00:34",
+                    "text": "Take a rest as a friend"
+                },
+                {
+                    "timeline": "00:00:38",
+                    "text": "As an old memoria"
+                },
+                {
+                    "timeline": "00:00:42",
+                    "text": "Memoria"
+                },
+                {
+                    "timeline": "00:00:46",
+                    "text": "Memoria"
+                },
+                {
+                    "timeline": "00:00:50",
+                    "text": "Come doused in mud, soaked in bleach"
+                },
+                {
+                    "timeline": "00:00:54",
+                    "text": "As I want you to be"
+                },
+                {
+                    "timeline": "00:00:58",
+                    "text": "As a trend, as a friend"
+                },
+                {
+                    "timeline": "00:01:02",
+                    "text": "As an old memoria"
+                },
+                {
+                    "timeline": "00:01:06",
+                    "text": "Memoria"
+                },
+                {
+                    "timeline": "00:01:10",
+                    "text": "Memoria"
+                }
+                
+            ]
+        }
+    ]
+}
