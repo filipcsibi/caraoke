@@ -48,15 +48,18 @@ export default function Karaoke({ navigation, route }) {
   useEffect(() => {
     let interval;
     if (isPlaying) {
-      //if its the first time it is playing, then we dont want to change the player, until lyrics[0].duration
+      //if it's the first time it is playing, then we don't want to change the player until lyrics[0].duration
       if (firstTime) {
         setFirstTime(false);
         interval = setInterval(() => {
-          setPlayerIndex((prevIndex) => (prevIndex + 1) % players.length);
+          setPlayerIndex(1); // Skip "No one" and start rotating from the next player
         }, lyrics[0].duration - 3000);
       } else {
         interval = setInterval(() => {
-          setPlayerIndex((prevIndex) => (prevIndex + 1) % players.length);
+          setPlayerIndex((prevIndex) => {
+            const nextIndex = prevIndex + 1;
+            return nextIndex >= players.length ? 1 : nextIndex; // Skip "No one" if it reaches the end of the list
+          });
         }, 8000);
       } // Change player every 10 seconds
     }

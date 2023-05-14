@@ -4,8 +4,10 @@ import { Button } from "react-native";
 import lyricsData from "../data/lyrics.json";
 import MusicPlayer from "../components/song";
 import { PlayContext } from "../providers/PlayProvider";
+import { useNavigation } from "@react-navigation/native";
 
 export default function Lyrics({ props }) {
+  const navigation = useNavigation();
   const [currentLyricIndex, setCurrentLyricIndex] = useState(0);
   const [lyrics, setLyrics] = useState([]);
   const [lyricOnScreen, setLyricOnScreen] = useState([]);
@@ -20,11 +22,16 @@ export default function Lyrics({ props }) {
 
   // Set the current lyric index based on the duration each lyric has
   useEffect(() => {
+    console.log(currentLyricIndex, lyrics.length - 1);
     if (isPlaying && currentLyricIndex < lyrics.length - 1) {
       const interval = setInterval(() => {
         setCurrentLyricIndex((prev) => prev + 1);
       }, lyrics[currentLyricIndex].duration);
       return () => clearInterval(interval);
+    }
+    //if i am at the last lyric, then i want to navigate to a page where i can see the score
+    else if (currentLyricIndex === lyrics.length - 1) {
+      navigation.navigate("Aiurea");
     }
   }, [currentLyricIndex, isPlaying]);
 

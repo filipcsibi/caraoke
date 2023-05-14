@@ -5,6 +5,7 @@ import Lyrics from "../components/songscreen";
 import MusicPlayer from "../components/song";
 import Karaoke from "../components/karaoke";
 import { PlayProvider } from "../providers/PlayProvider";
+import Aiurea from "../components/Aiurea";
 
 const Stack = createStackNavigator();
 
@@ -27,6 +28,7 @@ export const MainNavigator = () => {
           options={{ headerShown: false }}
           component={Karaoke}
         />
+        <Stack.Screen name="Aiurea" component={Aiurea} />
       </Stack.Navigator>
     </PlayProvider>
   );
