@@ -42,7 +42,6 @@ export function IntroScreen({ navigation }) {
       songImage: require("../../assets/shape_of_you_cover.png"),
       audioFile: require("../../assets/shapeOfYou.mp3"),
       lyrics: lyricsData.songs[0].lyrics,
-      beginningDuration: 10000,
     },
     {
       songName: "Nebun de Alb",
@@ -82,8 +81,6 @@ export function IntroScreen({ navigation }) {
     songName,
     artistName,
     songImage,
-    audioFile,
-    lyrics,
     onPress,
   }) => {
     return (
@@ -100,7 +97,6 @@ export function IntroScreen({ navigation }) {
       </TouchableOpacity>
     );
   };
-  console.log(filteredSongs[1].audioFile);
 
   return (
     <SafeAreaView style={styles.container}>
