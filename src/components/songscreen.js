@@ -43,28 +43,25 @@ export default function Lyrics({ props }) {
 
   return (
     <View style={styles.container}>
-      {/* <Button title={isPlaying ? "Pause" : "Play"} onPress={handlePlayPause} /> */}
-      <View style={{ height: "70%" }}>
-        {lyricOnScreen.map((lyric, index) => (
-          <Text
-            key={index}
-            style={{
-              fontWeight: index === highlightIndex ? "bold" : "100",
-              fontSize: 30,
-            }}
-          >
-            {lyric.text}
-          </Text>
-        ))}
-      </View>
+      {lyricOnScreen.map((lyric, index) => (
+        <Text
+          key={index}
+          style={{
+            fontWeight: index === highlightIndex ? "bold" : "100",
+            fontSize: 25,
+          }}
+        >
+          {lyric.text}
+        </Text>
+      ))}
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    //backgroundColor: "#fff",
+    //flex: 1,
+    //backgroundColor: "brown",
     alignItems: "center",
     justifyContent: "center",
   },
