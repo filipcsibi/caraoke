@@ -159,7 +159,8 @@ export const ChooseSeatsScreen = ({ navigation, route }) => {
         <Animatable.View
           style={styles.seatButton1}
           animation="fadeIn"
-          duration={3000}
+          duration={800}
+          delay={700}
         >
           <TouchableOpacity
             onPress={() => handleSeatPress(1)}
@@ -179,7 +180,8 @@ export const ChooseSeatsScreen = ({ navigation, route }) => {
         <Animatable.View
           style={styles.seatButton2}
           animation="fadeIn"
-          duration={3000}
+          duration={800}
+          delay={700}
         >
           <TouchableOpacity
             onPress={() => handleSeatPress(2)}
@@ -199,7 +201,8 @@ export const ChooseSeatsScreen = ({ navigation, route }) => {
         <Animatable.View
           style={styles.seatButton3}
           animation="fadeIn"
-          duration={3000}
+          duration={800}
+          delay={700}
         >
           <TouchableOpacity
             onPress={() => handleSeatPress(3)}
@@ -219,7 +222,8 @@ export const ChooseSeatsScreen = ({ navigation, route }) => {
         <Animatable.View
           style={styles.seatButton4}
           animation="fadeIn"
-          duration={3000}
+          duration={800}
+          delay={700}
         >
           <TouchableOpacity
             onPress={() => handleSeatPress(4)}

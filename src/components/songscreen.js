@@ -16,7 +16,6 @@ export default function Lyrics({ props }) {
   // Set the lyrics from the imported JSON
   useEffect(() => {
     setLyrics(props);
-    console.log(props);
   }, []);
 
   // Set the current lyric index based on the duration each lyric has
