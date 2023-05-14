@@ -16,29 +16,18 @@ export default function Lyrics({ props }) {
   // Set the lyrics from the imported JSON
   useEffect(() => {
     setLyrics(props);
+    console.log(props);
   }, []);
 
-  // Change the current lyric index every 3 seconds
+  // Set the current lyric index based on the duration each lyric has
   useEffect(() => {
-    if (isPlaying) {
-      const id = setInterval(() => {
-        setCurrentLyricIndex((currentLyricIndex) => currentLyricIndex + 1);
-      }, 2500);
-      setIntervalId(id);
-      return () => clearInterval(id);
+    if (isPlaying && currentLyricIndex < lyrics.length - 1) {
+      const interval = setInterval(() => {
+        setCurrentLyricIndex((prev) => prev + 1);
+      }, lyrics[currentLyricIndex].duration);
+      return () => clearInterval(interval);
     }
-  }, [isPlaying]);
-
-  // Toggle the playing state when the button is pressed
-  const handlePlayPause = () => {
-    if (isPlaying) {
-      setIsPlaying(false);
-      clearInterval(intervalId);
-      setIntervalId(null);
-    } else {
-      setIsPlaying(true);
-    }
-  };
+  }, [currentLyricIndex, isPlaying]);
 
   // Show only 5 lyrics at a time
   useEffect(() => {

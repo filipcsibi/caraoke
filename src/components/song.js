@@ -32,11 +32,16 @@ export default function MusicPlayer(props) {
   const toggleSound = async () => {
     if (isPlaying) {
       console.log("Stopping Sound");
-      await sound.stopAsync();
-      await sound.unloadAsync();
+      await sound.pauseAsync();
       setIsPlaying(false);
     } else {
-      await playSound();
+      if (sound) {
+        console.log("Resuming Sound");
+        await sound.playAsync();
+      } else {
+        await playSound();
+      }
+      setIsPlaying(true);
     }
   };
 
