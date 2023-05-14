@@ -102,7 +102,7 @@ export const ChooseSeatsScreen = ({ navigation, route }) => {
             marginLeft: 15,
           }}
         >
-          <Text style={{ fontSize: 30, color: "black" }}>Back</Text>
+          <Image style={{width: 50, height: 50, margin: 10}} source={require("../../assets/left-arrow.png")} />
         </TouchableOpacity>
       </Animatable.View>
       <View
@@ -123,12 +123,18 @@ export const ChooseSeatsScreen = ({ navigation, route }) => {
           }}
         >
           <Animatable.Image
-            animation="fadeInRight"
+            animation={{
+              from: { translateX: 1000 },
+              to: { translateX: 0 },
+            }}
             source={masinaTop}
             style={styles.carSeatsImage}
           />
           <Animatable.Image
-            animation="fadeInRight"
+            animation={{
+              from: { translateX: 1000 },
+              to: { translateX: 0 },
+            }}
             source={masinaBot}
             style={styles.carSeatsImage}
           />
@@ -144,12 +150,18 @@ export const ChooseSeatsScreen = ({ navigation, route }) => {
           }}
         >
           <Animatable.Image
-            animation="fadeInRight"
+            animation={{
+              from: { translateX: 1000 },
+              to: { translateX: 0 },
+            }}
             source={masinaTop}
             style={styles.carSeatsImage}
           />
           <Animatable.Image
-            animation="fadeInRight"
+            animation={{
+              from: { translateX: 1000 },
+              to: { translateX: 0 },
+            }}
             source={masinaBot}
             style={styles.carSeatsImage}
           />
@@ -274,14 +286,14 @@ export const ChooseSeatsScreen = ({ navigation, route }) => {
       >
         <View style={styles.modalContainer}>
           <Animatable.View animation="fadeInDown" duration={2000}>
-            <Text style={{ fontSize: 30, color: "black" }}>
+            <Text style={{ fontSize: 30, color: "black", marginBottom: 20 }}>
               Enter your name please!
             </Text>
           </Animatable.View>
           <Animatable.View
             animation="fadeIn"
             duration={2000}
-            style={{ width: "100%", alignItems: "center" }}
+            style={{ width: "100%", alignItems: "center", marginBottom: 20 }}
           >
             <TextInput
               style={styles.input}
@@ -304,7 +316,7 @@ export const ChooseSeatsScreen = ({ navigation, route }) => {
             </TouchableOpacity>
             <TouchableOpacity
               style={styles.cancelButton}
-              onPress={() => toggleModal}
+              onPress={() => toggleModal(false)}
             >
               <Text style={styles.cancelButtonText}>Cancel</Text>
             </TouchableOpacity>
@@ -429,7 +441,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 15,
     marginBottom: 10,
-    padding: 5,
+    padding: 15,
     color: "black",
   },
   submitButton: {
