@@ -5,8 +5,12 @@
 npm install
 ```
 
+Then:
 
+```bash
 npm start
+```
+
 
 Welcome to Caraoke, the ultimate carpool karaoke app! With Caraoke, you and your friends can compete to be crowned the singing superstar of your ride.
 
@@ -36,3 +40,6 @@ We will use AI-powered speech-to-text recognition and pitch/frequency detection 
 ## Conclusion
 
 Are you ready to rock and roll on the go? Download Caraoke today and get ready to compete against your friends for the title of the ultimate carpool karaoke champion!
+![WhatsApp Image 2023-05-14 at 11 36 40 (1)](https://github.com/filipcsibi/caraoke/assets/117035025/c48c75b7-ef24-49a6-85f5-213eac582860)
+![WhatsApp Image 2023-05-14 at 11 36 40 (2)](https://github.com/filipcsibi/caraoke/assets/117035025/6ef7471a-b3e6-4df5-a1c3-63ec24465ef0)
+![WhatsApp Image 2023-05-14 at 11 36 40](https://github.com/filipcsibi/caraoke/assets/117035025/d0adc9df-b2f6-4448-9bc7-9d198d3c92ca)
