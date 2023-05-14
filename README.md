@@ -1,7 +1,10 @@
 # Caraoke
 
 
-run npm install
+```bash
+npm install
+```
+
 
 npm start
 
