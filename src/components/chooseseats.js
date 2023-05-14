@@ -10,8 +10,7 @@ import {
   Alert,
 } from "react-native";
 import * as Animatable from "react-native-animatable";
-import { StatusBar } from "react-native";
-import { Pressable } from "react-native";
+import { KeyboardAvoidingView } from "react-native";
 
 export const ChooseSeatsScreen = ({ navigation, route }) => {
   const [isModalVisible, setModalVisible] = useState(false);
@@ -21,7 +20,6 @@ export const ChooseSeatsScreen = ({ navigation, route }) => {
   const [visible4, setVisible4] = useState(true);
   const [snr, setSnr] = useState(0);
   const { songName, artistName, songImage, audioFile, lyrics } = route.params;
-  console.log(lyrics);
 
   const [selectedSeat, setSelectedSeat] = useState(0);
   const [passengerName, setPassengerName] = useState("");
@@ -91,7 +89,7 @@ export const ChooseSeatsScreen = ({ navigation, route }) => {
   console.log(audioFile);
 
   return (
-    <View style={styles.container}>
+    <KeyboardAvoidingView style={styles.container}>
       <Animatable.View animation="fadeIn" duration={3000}>
         <TouchableOpacity
           onPress={() => navigation.goBack()}
@@ -279,53 +277,84 @@ export const ChooseSeatsScreen = ({ navigation, route }) => {
       </View>
 
       {/* Modal for inputting passenger name */}
-      <Modal
-        visible={isModalVisible}
-        animationType="slide"
-        supportedOrientations={["landscape"]}
-      >
-        <View style={styles.modalContainer}>
-          <Animatable.View animation="fadeInDown" duration={2000}>
-            <Text style={{ fontSize: 30, color: "black", marginBottom: 20 }}>
-              Enter your name please!
-            </Text>
-          </Animatable.View>
-          <Animatable.View
-            animation="fadeIn"
-            duration={2000}
-            style={{ width: "100%", alignItems: "center", marginBottom: 20 }}
-          >
+      <Modal visible={isModalVisible} animationType="slide" supportedOrientations={["landscape"]}>
+        <View style={modalStyles.modalContainer}>
+
+          <Animatable.View animation="fadeIn" duration={2000} style={{ width: "100%", alignItems: "center", marginBottom: 20 }}>
             <TextInput
-              style={styles.input}
+              style={modalStyles.input}
               onChangeText={(text) => handleNameChange(text)} // Pass the text value
               value={passengersList[selectedSeat - 1]} // Use the passenger name from the list
               placeholder="Passenger name..."
               placeholderTextColor={"gray"}
             />
           </Animatable.View>
-          <Animatable.View
-            style={{ flexDirection: "row", alignItems: "center", gap: 10 }}
-            animation="fadeInUp"
-            duration={2000}
-          >
-            <TouchableOpacity
-              style={styles.submitButton}
-              onPress={() => handleSubmit(snr)}
-            >
-              <Text style={styles.submitButtonText}>Ok</Text>
+
+          <Animatable.View style={{ flexDirection: "row", alignItems: "center", gap: 50 }} animation="fadeInUp" duration={2000}>
+            <TouchableOpacity style={modalStyles.submitButton} onPress={() => handleSubmit(snr)}>
+              <Text style={modalStyles.submitButtonText}>Add</Text>
             </TouchableOpacity>
-            <TouchableOpacity
-              style={styles.cancelButton}
-              onPress={() => toggleModal(false)}
-            >
-              <Text style={styles.cancelButtonText}>Cancel</Text>
+
+            <TouchableOpacity style={modalStyles.cancelButton} onPress={() => toggleModal(false)}>
+              <Text style={modalStyles.cancelButtonText}>Cancel</Text>
             </TouchableOpacity>
           </Animatable.View>
+
         </View>
       </Modal>
-    </View>
+    </KeyboardAvoidingView>
   );
 };
+
+const modalStyles = StyleSheet.create({
+  modalContainer: {
+    flex: 1,
+    backgroundColor: "white",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  input: {
+    height: 80,
+    width: "60%",
+    margin: 12,
+    borderWidth: 1,
+    paddingHorizontal: 15,
+    paddingVertical: 10,
+    borderRadius: 15,
+    borderColor: "#2C2C2C",
+    fontSize: 45,
+    marginBottom: 50,
+  },
+  submitButton: {
+    width: "30%",
+    backgroundColor: "#1A1A1A",
+    paddingVertical: 15,
+    borderRadius: 25,
+    alignItems: "center",
+    elevation: 3,
+  },
+  submitButtonText: {
+    color: "white",
+    fontWeight: "bold",
+    fontSize: 45,
+  },
+  cancelButton: {
+    width: "30%",
+    backgroundColor: "white",
+    paddingVertical: 15,
+    borderRadius: 25,
+    alignItems: "center",
+    borderWidth: 1,
+    borderColor: "#2C2C2C",
+    elevation: 3,
+  },
+  cancelButtonText: {
+    color: "#2C2C2C",
+    fontWeight: "bold",
+    fontSize: 45,
+  },
+});
+
 
 const styles = StyleSheet.create({
   container: {
@@ -427,43 +456,5 @@ const styles = StyleSheet.create({
     height: 65,
     bottom: "23%",
     right: "33.5%",
-  },
-
-  modalContainer: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    margin: 20,
-  },
-  input: {
-    width: "80%",
-    height: 40,
-    borderWidth: 1,
-    borderRadius: 15,
-    marginBottom: 10,
-    padding: 15,
-    color: "black",
-  },
-  submitButton: {
-    backgroundColor: "green",
-    width: "39%",
-    paddingVertical: 10,
-    alignItems: "center",
-    borderRadius: 15,
-  },
-  submitButtonText: {
-    color: "white",
-    fontSize: 16,
-  },
-  cancelButton: {
-    backgroundColor: "#C23838",
-    width: "39%",
-    paddingVertical: 10,
-    borderRadius: 15,
-    alignItems: "center",
-  },
-  cancelButtonText: {
-    color: "white",
-    fontSize: 16,
   },
 });
