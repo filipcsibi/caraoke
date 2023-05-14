@@ -8,10 +8,11 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import MusicPlayer from "../components/song";
 import Lyrics from "../components/songscreen";
-import { PlayProvider } from "../providers/PlayProvider";
+// import { PlayProvider } from "../providers/PlayProvider";
+import { PlayContext } from "../providers/PlayProvider";
 
 function Player({ name }) {
   return (
@@ -38,52 +39,61 @@ export default function Karaoke({ navigation, route }) {
   const backBtn = require("../../assets/left-arrow.png");
   const { songName, artistName, songImage, passengersList, audioFile, lyrics } =
     route.params;
-  console.log(passengersList);
+  const [firstTime, setFirstTime] = useState(true);
 
   const [playerIndex, setPlayerIndex] = useState(0);
-  const players = passengersList;
+  const players = ["No one", ...passengersList.filter((item) => item !== "")];
+  const { isPlaying, setIsPlaying } = useContext(PlayContext);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setPlayerIndex((prevIndex) => (prevIndex + 1) % players.length);
-    }, 10000); // Change player every 10 seconds
-
+    let interval;
+    if (isPlaying) {
+      //if its the first time it is playing, then we dont want to change the player, until lyrics[0].duration
+      if (firstTime) {
+        setFirstTime(false);
+        interval = setInterval(() => {
+          setPlayerIndex((prevIndex) => (prevIndex + 1) % players.length);
+        }, lyrics[0].duration - 3000);
+      } else {
+        interval = setInterval(() => {
+          setPlayerIndex((prevIndex) => (prevIndex + 1) % players.length);
+        }, 8000);
+      } // Change player every 10 seconds
+    }
     return () => clearInterval(interval);
-  }, [playerIndex]);
+  }, [playerIndex, isPlaying]);
 
   return (
-    <PlayProvider>
-      <View style={styles.container} supportedOrientations={["landscape"]}>
-        <StatusBar style="auto" />
-        <TouchableOpacity
-          style={styles.backButton}
-          onPress={() => navigation.pop(2)}
-        >
-          <Image source={backBtn} style={styles.icon} />
-        </TouchableOpacity>
-        <View style={{ width: "30%", height: "100%", marginLeft: 25 }}>
-          <MusicPlayer
-            soundFile={audioFile}
-            albumPhoto={songImage}
-            songName={songName}
-            songArtist={artistName}
-          />
-        </View>
-        <View
-          style={{
-            width: "70%",
-            height: "100%",
-            flexDirection: "column",
-            flex: 1,
-            alignItems: "center",
-            justifyContent: "space-evenly",
-          }}
-        >
-          <Player name={players[playerIndex]} />
-          <Lyrics props={lyrics} />
-        </View>
+    <View style={styles.container} supportedOrientations={["landscape"]}>
+      <StatusBar style="auto" />
+      <TouchableOpacity
+        style={styles.backButton}
+        onPress={() => navigation.pop(2)}
+      >
+        <Image source={backBtn} style={styles.icon} />
+      </TouchableOpacity>
+      <View style={{ width: "30%", height: "100%", marginLeft: 25 }}>
+        <MusicPlayer
+          soundFile={audioFile}
+          albumPhoto={songImage}
+          songName={songName}
+          songArtist={artistName}
+        />
       </View>
-    </PlayProvider>
+      <View
+        style={{
+          width: "70%",
+          height: "100%",
+          flexDirection: "column",
+          flex: 1,
+          alignItems: "center",
+          justifyContent: "space-evenly",
+        }}
+      >
+        <Player name={players[playerIndex]} />
+        <Lyrics props={lyrics} />
+      </View>
+    </View>
   );
 }
 
