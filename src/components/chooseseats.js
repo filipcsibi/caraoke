@@ -86,7 +86,6 @@ export const ChooseSeatsScreen = ({ navigation, route }) => {
       });
     } else Alert.alert("Please fill at least one seat!");
   };
-  console.log(audioFile);
 
   return (
     <KeyboardAvoidingView style={styles.container}>
@@ -270,7 +269,7 @@ export const ChooseSeatsScreen = ({ navigation, route }) => {
                 fontWeight: "bold",
               }}
             >
-              GO!
+              Sing!
             </Text>
           </TouchableOpacity>
         </Animatable.View>
@@ -379,9 +378,9 @@ const styles = StyleSheet.create({
     position: "absolute",
     color: "white",
     fontSize: 60,
-    top: "60%",
+    top: "62%",
     opacity: 0.7,
-    left: "20%",
+    left: "25%",
   },
 
   textButton2: {
@@ -390,8 +389,8 @@ const styles = StyleSheet.create({
     color: "white",
     opacity: 0.7,
     fontSize: 60,
-    top: "15%",
-    left: "20%",
+    top: "19%",
+    left: "24%",
   },
 
   textButton3: {
@@ -400,7 +399,7 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 60,
     opacity: 0.7,
-    top: "15%",
+    top: "19%",
     left: "55%",
   },
 
@@ -410,7 +409,7 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 60,
     opacity: 0.7,
-    top: "60%",
+    top: "62%",
     left: "55%",
   },
 

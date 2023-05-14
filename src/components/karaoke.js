@@ -94,7 +94,10 @@ export default function Karaoke({ navigation, route }) {
         }}
       >
         <Player name={players[playerIndex]} />
-        <Lyrics props={lyrics} />
+        <Lyrics 
+          lyrics={lyrics}
+          users={players} 
+        />
       </View>
     </View>
   );

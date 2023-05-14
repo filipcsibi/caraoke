@@ -6,6 +6,7 @@ import MusicPlayer from "../components/song";
 import Karaoke from "../components/karaoke";
 import { PlayProvider } from "../providers/PlayProvider";
 import Aiurea from "../components/Aiurea";
+import EndScreen from "../components/EndScreen";
 
 const Stack = createStackNavigator();
 
@@ -27,6 +28,11 @@ export const MainNavigator = () => {
           name="songscreen"
           options={{ headerShown: false }}
           component={Karaoke}
+        />
+        <Stack.Screen
+          name="endscreen"
+          options={{ headerShown: false }}
+          component={EndScreen}
         />
         <Stack.Screen name="Aiurea" component={Aiurea} />
       </Stack.Navigator>

@@ -3,9 +3,11 @@ import { StyleSheet, TouchableOpacity, View, Image, TextInput, SafeAreaView  } f
 import { Text } from "react-native";
 import { Dimensions } from "react-native";
 import * as Animatable from "react-native-animatable";
+import { useRoute,useNavigation } from "@react-navigation/native";
  
-export function EndScreen ({users}) {
-
+export function EndScreen () {
+    const route = useRoute();
+    const navigation = useNavigation();
   function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -14,8 +16,7 @@ export function EndScreen ({users}) {
     return array;
   }
       
-  const users_mockup = ["Calin", "Tudor",  "Mihaiela"];
-  const shuffledUsers = shuffleArray([...users_mockup]);
+  const shuffledUsers = shuffleArray([...route.params.users.slice(1,route.params.users.length)]);
 
   function getRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -53,7 +54,7 @@ export function EndScreen ({users}) {
           </View>
 
           <Animatable.View delay={3700} animation={{from: {translateY: 1000}, to: {translateY: 0}}} style={{width: "100%"}}>
-            <TouchableOpacity onPress={() => navigation.goBack()} style={styles.button}>
+            <TouchableOpacity onPress={() => navigation.navigate("introscreen")} style={styles.button}>
                 <Text style={{ fontSize: 50, color: "black", fontWeight: "bold" }}>Finish</Text>
             </TouchableOpacity>
           </Animatable.View>

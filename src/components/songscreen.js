@@ -5,8 +5,9 @@ import lyricsData from "../data/lyrics.json";
 import MusicPlayer from "../components/song";
 import { PlayContext } from "../providers/PlayProvider";
 import { useNavigation } from "@react-navigation/native";
+import * as React from "react";
 
-export default function Lyrics({ props }) {
+export default function Lyrics(props) {
   const navigation = useNavigation();
   const [currentLyricIndex, setCurrentLyricIndex] = useState(0);
   const [lyrics, setLyrics] = useState([]);
@@ -17,12 +18,13 @@ export default function Lyrics({ props }) {
 
   // Set the lyrics from the imported JSON
   useEffect(() => {
-    setLyrics(props);
+    setLyrics(props.lyrics);
   }, []);
 
   // Set the current lyric index based on the duration each lyric has
   useEffect(() => {
     console.log(currentLyricIndex, lyrics.length - 1);
+    console.log(props.users)
     if (isPlaying && currentLyricIndex < lyrics.length - 1) {
       const interval = setInterval(() => {
         setCurrentLyricIndex((prev) => prev + 1);
@@ -31,7 +33,8 @@ export default function Lyrics({ props }) {
     }
     //if i am at the last lyric, then i want to navigate to a page where i can see the score
     else if (currentLyricIndex === lyrics.length - 1) {
-      navigation.navigate("Aiurea");
+      //console.log(props.users)
+      navigation.navigate("endscreen", {users: props.users});
     }
   }, [currentLyricIndex, isPlaying]);
 
